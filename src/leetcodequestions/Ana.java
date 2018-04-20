@@ -1,67 +1,50 @@
 package leetcodequestions;
-
-import java.util.HashMap;
-
+import java.util.Scanner;
 public class Ana {
-	String s= "anagram";
-String t= "nagaram";
-
-	int sascii=0;
-	int tascii=0;
-	char ret;
-    int scount=1;
-    int tcount=1;
-    Boolean flag=false;
-//	Boolean flag=false;
-	void display(){
-		System.out.println("m hee");
-		 HashMap<Character,Integer> hm = new HashMap<>();
-	        if(s.length()==t.length()){
-	             for(int i=0;i<s.length();i++){
-	           if(!hm.containsKey(s.charAt(i))){
-	               hm.put(s.charAt(i),scount);
-	           }
-	           else{
-	               int newcount= hm.get(s.charAt(i));
-	               newcount++;
-	               hm.put(s.charAt(i),newcount);
-	           }
-	           
-	       }
-	        for(int i=0;i<t.length();i++){
-	           if(!hm.containsKey(t.charAt(i))){
-	              flag=false;
-	              break;
-	           }
-	           else{
-	               int newcount= hm.get(t.charAt(i));
-	               if(newcount==1){
-	                   hm.remove(t.charAt(i));
-	               }
-	               else{
-	               newcount--;
-	               hm.put(t.charAt(i),newcount);
-	           /*    if(newcount==1){
-	            	   hm.remove(t.charAt(i));
-	               } */
-	             
-	               }
-	           }
-	           
-	       }
-	       if(hm.isEmpty()){
-	           flag=true;
-	       }
-
-	        }
-	        System.out.println(flag);
+	public static void sort()
+	{
+		int s=0;
+		int a[]=new int[5];
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the set of values");
+		for (int i=0;i<5;i++)
+		{
+		a[i]=sc.nextInt();
+		}
+		for(int i=0;i<5;i++){
+			System.out.println("sorted array is : /n" +a[i]);
+		}
+		for(int i=0;i<5;i++)
+		{
+			for(int j=1;j<(5-i);j++)
+			{
+			if(a[j-1]>a[j])
+			{
+				s=a[j-1];
+				a[j-1]=a[j];
+				a[j]=s;
+			}	
+			}
+		}
+		System.out.println("hello");
+		for(int i=0;i<5;i++){
+			System.out.println("sorted array is : /n" +a[i]);
+		}
 	}
+	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-Ana a =new Ana();
-a.display();
+		
+		
+	sort();
+	
+	
+	
 
 	}
+	
+	
 
 }
 
